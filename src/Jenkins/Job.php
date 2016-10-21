@@ -167,4 +167,28 @@ class Job
 
         return $this->getJenkins()->getBuild($this->getName(), $this->job->lastBuild->number);
     }
+
+    /**
+     * @return string|null
+     */
+    public function getDisplayNameOrNull()
+    {
+        return $this->job->displayNameOrNull;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function is_inQueue()
+    {
+        return $this->job->inQueue;
+    }
+
+    /**
+     * @return stdClass
+     */
+    public function getQueueItem()
+    {
+        return $this->job->queueItem;
+    }
 }
